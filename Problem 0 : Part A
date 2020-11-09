@@ -1,0 +1,108 @@
+const readline = require('readline');
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+inp.on("line", (data) => {
+ userInput.push(data);
+});
+inp.on("close", () => {
+   
+   var cat = {
+ name: "Fluffy",
+ activities: ["play", "eat cat food"],
+ catFriends: [
+ {
+ name: "bar",
+ activities: ["be grumpy", "eat bread omblet"],
+ weight: 8,
+ furcolor: "white"
+ }, 
+ {
+ name: "foo",
+ activities: ["sleep", "pre-sleep naps"],
+ weight: 3
+ }
+ ]
+}
+var arr=[];
+var arr1=[];
+var sum=0;
+var arr2=[];
+
+ console.log("##before edit");
+ console.log(cat);
+ 
+ console.log("  ");
+ console.log("##Task 1 adding height and weigth to fluffy");
+ cat["height"]= "32cm";
+ cat["weight"]= 7;
+ console.log(cat);
+ 
+ console.log("  ");
+ console.log("##Task 2 changing flyffy to fluffyy");
+ cat["name"]="Fluffyy";
+ console.log(cat);
+ console.log("  ");
+ 
+ console.log("##Task 3 listing all the activities of fluffy friends")
+ var a= (cat.catFriends.length);
+ var b= (cat.catFriends);
+ for(i=0;i<a;i++)
+ {
+    var c= b[i].activities.length;
+    for(j=0;j<c;j++)
+    {
+        arr.push(b[i].activities[j]);
+    }
+ }
+ console.log(arr);
+ 
+ console.log("  ");
+ console.log("##Task 4 catFriend names");
+ for(k=0;k<a;k++)
+ {
+     arr1.push(b[k].name);
+ }
+ console.log(arr1);
+ console.log("  ");
+ console.log("##Task 5 total weight of catFriends");
+ for(k=0;k<a;k++)
+ {
+     sum= sum+ (b[k].weight);
+ }
+ console.log(sum);
+ console.log("  ");
+ console.log("##Task 6 total activities of all cats (op:6)");
+ var e= cat.activities.length;
+ var f=cat.activities;
+ for(k=0;k<e;k++)
+ {
+     arr2.push(f[k]);
+ }
+ console.log(arr.concat(arr2))
+ 
+ console.log("  ");
+ console.log("##Task 7 Add 2 more activities to bar & foo cats");
+ for(i=0;i<a;i++)
+ {
+       b[i].activities.push("dancing");
+       b[i].activities.push("singing");
+    
+ }
+ console.log(cat);
+ 
+ console.log("  ");
+ console.log("##Task 8 Update the fur color of bar");
+ for(i=0;i<a;i++)
+ {
+     var d= b[i];
+     if(d.name=="bar")
+     {
+         d.furcolor='green';
+         
+     }
+ }
+ console.log(cat);
+ 
+});
